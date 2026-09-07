@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PPEI — Portfolio d'applications Python pour Élus et Institutions</title>
+<meta name="description" content="Des outils gratuits d'analyse de données territoriales pour les élus locaux et les agents des collectivités : artificialisation des sols, finances M57, emploi, logement social, équipements.">
+<link rel="stylesheet" href="styles.css">
+<center><img src="./assets/logo.png" width="15%"/></center>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="wordmark">PPEI<span>.</span></a>
+    <nav>
+      <a href="#registre">Les applications</a>
+      <a href="#a-propos">À propos</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="hero-grid" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0,40 H260 M0,90 H260 M0,140 H260 M0,190 H260 M0,240 H260 M40,0 V260 M90,0 V260 M140,0 V260 M190,0 V260 M240,0 V260" />
+  </svg>
+  <div class="wrap">
+    <h1>Portfolio d'applications Python<br>pour Élus et Institutions</h1>
+    <p class="lede">
+      Des outils gratuits pour exploiter les données publiques de votre
+      territoire — artificialisation des sols, finances communales, emploi,
+      logement social, équipements — pensés pour des élus et des agents non
+      spécialistes, sans dépendre d'un éditeur commercial.
+    </p>
+  </div>
+</section>
+
+<main class="wrap" id="registre">
+  <h2>Le registre</h2>
+
+  <div class="register">
+
+    <a class="dossier-row" href="artificialisation.html">
+      <span class="dossier-code">ZAN<br>CEREMA</span>
+      <span class="dossier-body">
+        <span class="dossier-title">PPEI-Artificialisation</span>
+        <p class="dossier-desc">Suivi de la consommation d'espaces NAF et de la trajectoire ZAN de votre commune ou EPCI, à partir des données CEREMA.</p>
+      </span>
+      <span class="dossier-arrow">→</span>
+    </a>
+
+    <a class="dossier-row" href="budget-finances.html">
+      <span class="dossier-code">M57</span>
+      <span class="dossier-body">
+        <span class="dossier-title">PPEI-Budget&nbsp;&amp;&nbsp;Finances</span>
+        <p class="dossier-desc">Analyse des comptes de la commune en nomenclature M57 : ratios, évolutions, projection budgétaire.</p>
+      </span>
+      <span class="dossier-arrow">→</span>
+    </a>
+
+    <a class="dossier-row" href="emploi.html">
+      <span class="dossier-code">URSSAF</span>
+      <span class="dossier-body">
+        <span class="dossier-title">PPEI-Emploi</span>
+        <p class="dossier-desc">Effectifs salariés et secteurs d'activité de votre territoire, données URSSAF par commune et EPCI.</p>
+      </span>
+      <span class="dossier-arrow">→</span>
+    </a>
+
+    <a class="dossier-row" href="rpls.html">
+      <span class="dossier-code">RPLS</span>
+      <span class="dossier-body">
+        <span class="dossier-title">PPEI-RPLS</span>
+        <p class="dossier-desc">Répertoire du parc locatif social de la commune : occupation, loyers, caractéristiques du parc.</p>
+      </span>
+      <span class="dossier-arrow">→</span>
+    </a>
+
+    <a class="dossier-row" href="bpe.html">
+      <span class="dossier-code">BPE</span>
+      <span class="dossier-body">
+        <span class="dossier-title">PPEI-BPE</span>
+        <p class="dossier-desc">Équipements et services présents sur le territoire (Base Permanente des Équipements), cartographiés par zonage.</p>
+      </span>
+      <span class="dossier-arrow">→</span>
+    </a>
+
+    <a class="dossier-row" href="observatoire.html">
+      <span class="dossier-code">OBSERV.</span>
+      <span class="dossier-body">
+        <span class="dossier-title">PPEI Observatoire</span>
+        <p class="dossier-desc">Vue d'ensemble du territoire en langage clair, avec indicateurs vert/orange/rouge pour les non-spécialistes.</p>
+      </span>
+      <span class="dossier-arrow">→</span>
+    </a>
+
+    <a class="dossier-row" href="sirene.html">
+      <span class="dossier-code">SIRENE</span>
+      <span class="dossier-body">
+        <span class="dossier-title">PPEI-SIREN/SIRET</span>
+        <p class="dossier-desc">Recherche et consultation des entreprises implantées sur la commune à partir du répertoire Sirene.</p>
+      </span>
+      <span class="dossier-arrow">→</span>
+    </a>
+
+    <a class="dossier-row" href="secours.html">
+      <span class="dossier-code" style="color:var(--stamp)">SECOURS</span>
+      <span class="dossier-body">
+        <span class="dossier-title">Localise-moi Secours</span>
+        <p class="dossier-desc">Application autonome : transmet votre position GPS et un message pré-rempli aux secours par SMS, utile en extérieur ou en randonnée.</p>
+      </span>
+      <span class="dossier-arrow">→</span>
+    </a>
+
+  </div>
+
+  <section id="a-propos" class="content-section">
+    <h2>À propos de PPEI</h2>
+    <p>
+      PPEI (Portfolio d'applications Python pour Élus et Institutions) est
+      développé par <strong>Philippe PETIT</strong>, ancien maire de la commune de
+      Saint-Sauveur (Occitanie). Chaque application s'appuie sur des données
+      publiques ouvertes (CEREMA, URSSAF, INSEE, API Géo) et vise à rendre
+      ces données lisibles et exploitables par des élus et des agents qui
+      n'ont pas de formation en analyse de données.
+    </p>
+    <p>
+      Les applications sont disponibles gratuitement, en version Windows et
+      en version Android selon les modules. Aucune donnée personnelle n'est
+      collectée par l'éditeur.
+    </p>
+    <p>
+      Contact : <a href="mailto:pp.0704@orange.fr">pp.0704@orange.fr</a>
+    </p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>PPEI — Philippe PETIT · <a href="mailto:pp.0704@orange.fr">pp.0704@orange.fr</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
