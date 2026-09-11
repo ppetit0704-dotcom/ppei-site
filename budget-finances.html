@@ -50,11 +50,52 @@
   </section>
 
   <section class="content-section">
+    <h2>Générer vos fichiers CSV</h2>
+    <p>PPEI-Budget & Finances fonctionne à partir de deux exports issus de votre logiciel de comptabilité publique (Berger-Levrault, Cosoluce/Cegid, Ciril Finances, JVS-Mairistem, Sword/Magnus, ou tout autre logiciel compatible M57/M14).</p>
+
+    <p class="note-todo">⚠️ Les noms de menus varient selon le logiciel et sa version. Cette page décrit la démarche générale et les points de vigilance ; en cas de doute, votre éditeur ou votre service comptable saura vous indiquer l'écran exact dans votre propre logiciel.</p>
+
+    <h3>Les deux fichiers attendus</h3>
+
+    <p><strong>Situation.csv</strong> — état d'exécution budgétaire. C'est la restitution de synthèse qui présente, pour chaque ligne budgétaire (section, chapitre, compte), le prévu, le réalisé, le disponible et les restes à réaliser. C'est l'équivalent numérique de l'« état de la situation des crédits » ou « état d'exécution du budget ».</p>
+    <pre><code>Sens;Section;Chapitre;Libellé_budget;Compte;Total_Prévu;Réalisé;__Réalisé_;
+Disponible__réalisé_;__Dispo__réalisé_;Liquidé_N_1;Liquidé_N_2;Liquidé_N_3;
+Liquidé_N_4;Liquidé_N_5;Dégagé;Engagé;Reste_engagé</code></pre>
+
+    <p><strong>GrandLivre.csv</strong> — grand livre général. C'est le détail de toutes les écritures comptables de l'exercice, compte par compte : chaque ligne correspond à une opération (mandat, titre, engagement) avec sa date, son tiers, son montant et son imputation. C'est l'équivalent du « grand livre général » ou « grand livre des comptes ».</p>
+    <pre><code>Sens;Compte;Exercice;Libellé_budget;Date;type;Objet;Série_de_bordereau;
+N_Bordereau;N_Pièce;N_Engagement;Section;Chapitre;Imputation;Service;Tiers;
+Total__R_V_;Engagé;Dégagé;Liquidé;Montant_HT;Montant_TVA_récupérable;
+Montant_TTC;Réalisé;Réel_Ordre;Reste_engagé</code></pre>
+
+    <h3>Démarche générale pour obtenir ces exports</h3>
+    <ol class="feature-list">
+      <li>Se placer sur le bon exercice budgétaire avant l'export (l'exercice en cours ou l'exercice clos, selon votre besoin).</li>
+      <li>Chercher, dans le menu Comptabilité / États / Éditions / Restitutions, les rapports intitulés « Situation budgétaire », « État d'exécution du budget » ou « État des crédits » pour <code>Situation.csv</code>, et « Grand livre général », « Grand livre des comptes » ou « Grand livre par compte » pour <code>GrandLivre.csv</code>.</li>
+      <li>Lors de l'export, choisir le format CSV (parfois nommé « export tableur » ou « export Excel/CSV ») plutôt que PDF.</li>
+      <li>Vérifier les paramètres d'export : encodage <strong>UTF-8</strong> (certains logiciels exportent par défaut en ANSI/Windows-1252 — à changer si l'option existe), séparateur <strong>point-virgule (;)</strong>, et inclure toutes les colonnes disponibles, y compris celles qui semblent redondantes.</li>
+    </ol>
+
+    <h3>Vérifier le fichier avant de l'importer</h3>
+    <ul class="feature-list">
+      <li>Ouvrez le fichier avec un éditeur de texte ou LibreOffice Calc (évitez Excel pour une première vérification : il peut ré-encoder le fichier ou reformater les nombres à l'enregistrement).</li>
+      <li>Vérifiez que la première ligne contient bien les en-têtes de colonnes, proches de ceux listés ci-dessus (les noms exacts peuvent varier légèrement selon le logiciel et sa version).</li>
+      <li>Vérifiez que les montants utilisent la virgule comme séparateur décimal (format français), sans séparateur de milliers.</li>
+      <li>Vérifiez qu'il n'y a pas de ligne de total ou de pied de page ajoutée automatiquement en fin de fichier.</li>
+    </ul>
+
+    <h3>En cas de colonnes manquantes ou différentes</h3>
+    <p>Privilégiez toujours l'export le plus détaillé possible plutôt qu'une version résumée. Si certaines colonnes n'existent pas dans votre logiciel, l'application peut fonctionner en mode dégradé sur les analyses concernées — n'hésitez pas à signaler votre cas sur le dépôt GitHub du projet. Vous pouvez aussi contacter le support de votre éditeur en mentionnant que vous cherchez un « export CSV du grand livre général » et un « export CSV de la situation budgétaire/état d'exécution » : ce sont des restitutions standard que tous les logiciels de comptabilité publique proposent, même si l'intitulé exact diffère.</p>
+
+    <p><em>Ces fichiers contiennent des données comptables de votre collectivité (montants, tiers). PPEI-Budget & Finances les traite entièrement en local sur votre poste ou votre appareil : aucune donnée n'est envoyée sur un serveur externe.</em></p>
+  </section>
+
+  <section class="content-section">
     <h2>Captures d'écran</h2>
     <div class="screenshot-gallery">
-      <div class="screenshot-placeholder">Capture à ajouter<br>(assets/screenshots/budget-finances-1.png)</div>
-      <div class="screenshot-placeholder">Capture à ajouter<br>(assets/screenshots/budget-finances-2.png)</div>
-      <div class="screenshot-placeholder">Capture à ajouter<br>(assets/screenshots/budget-finances-3.png)</div>
+      <div class="screenshot-placeholder"><img src="./assets/screenshots/M57_1.jpg" /></div>
+      <div class="screenshot-placeholder"><img src="./assets/screenshots/M57_2.jpg" /></div>
+      <div class="screenshot-placeholder"><img src="./assets/screenshots/M57_3.jpg" />)</div>
     </div>
     <p class="note-todo">Remplacez chaque bloc pointillé par une balise &lt;img&gt; une fois vos captures d'écran ajoutées dans assets/screenshots/ — voir README.md.</p>
   </section>
@@ -64,10 +105,10 @@
     <div class="download-block">
       <p>Téléchargements pour PPEI-Budget & Finances :</p>
       <div class="btn-row">
-        <a class="btn btn-primary" href="#" aria-disabled="true">Windows (.exe)</a>
-        <a class="btn btn-secondary" href="#" aria-disabled="true">Android (.apk)</a>
+        
+        <a href="https://github.com/ppetit0704-dotcom/ppei-site/releases/download/V2_2_1_Analyse_M57/PPEI-Budget-Finances.-.Smartphone.-.V2.apk" aria-disabled="true">Analyse financière M57 Android (.apk)</a>
       </div>
-      <p class="note-todo">Liens à activer une fois les fichiers déposés dans une Release GitHub — voir README.md.</p>
+      
     </div>
   </section>
 
