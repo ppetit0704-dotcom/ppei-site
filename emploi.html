@@ -43,12 +43,26 @@
   <section class="content-section">
     <h2>Disponibilité</h2>
     <table class="availability-table">
-      <tr><th>Plateforme</th><th>Statut</th></tr>
-      <tr><td>Windows</td><td>Disponible (exécutable autonome)</td></tr>
+      <tr><th>Plateforme</th><th>Statut</th></tr
       <tr><td>Android</td><td>Disponible</td></tr>
     </table>
   </section>
+  <section class="content-section">
+    <h2>Source des données</h2>
+    <p>PPEI-Emploi fonctionne à partir de deux fichiers CSV en <strong>open data de l'URSSAF</strong> (<a href="https://open.urssaf.fr/explore/" target="_blank" rel="noopener">open.urssaf.fr</a>), que vous importez vous-même dans l'application via le sélecteur de fichier — aucune donnée n'est préchargée ni transmise à un serveur.</p>
 
+    <h3>Les deux fichiers attendus</h3>
+    <p><strong>Commune × APE</strong> — effectifs salariés et nombre d'établissements du secteur privé, par commune et par secteur d'activité (code APE), une colonne par année de 2006 à 2025.</p>
+    <p><strong>EPCI (annuel)</strong> — nombre d'établissements, effectifs salariés moyens et masse salariale du secteur privé, par EPCI et par année (une ligne par EPCI × année).</p>
+
+    <h3>Télécharger le millésime 2025</h3>
+    <p>Pour simplifier la prise en main, une copie des deux fichiers (millésime 2025, tels que publiés sur open.urssaf.fr) est disponible directement :</p>
+    <div class="btn-row">
+      <a class="btn btn-secondary" href="https://github.com/ppetit0704-dotcom/ppei-site/releases/download/V1-0-4-Emploi/etablissements-et-effectifs-salaries-au-niveau-commune-x-ape-last.csv">Commune × APE (.csv)</a>
+      <a class="btn btn-secondary" href="https://github.com/ppetit0704-dotcom/ppei-site/releases/download/V1-0-4-Emploi/nombre-etab-effectifs-salaries-et-masse-salariale-secteur-prive-epci.csv">EPCI annuel (.csv)</a>
+    </div>
+    <p class="note-todo">Pour un millésime plus récent une fois publié, retrouvez ces deux jeux de données à jour dans le <a href="https://open.urssaf.fr/explore/" target="_blank" rel="noopener">catalogue de données open.urssaf.fr</a> (recherchez « commune x APE » et « EPCI »).</p>
+  </section>
   <section class="content-section">
     <h2>Captures d'écran</h2>
     <div class="screenshot-gallery">
